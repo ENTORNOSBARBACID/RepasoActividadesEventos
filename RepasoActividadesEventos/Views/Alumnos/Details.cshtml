@@ -1,0 +1,26 @@
+﻿@model ResumenUsuario
+<h1>Detalles del Alumno</h1>
+<h2>Nombre: @Model.usu.Nombre @Model.usu.Apellidos</h2>
+<h2>Email: @Model.usu.Email</h2>
+<h2>Imagen: <img src="@Model.usu.Imagen" style="width: 30px; height: 30px"/></h2>
+<hr>
+<h1>Actividades</h1>
+<table class="table-active w-75 mx-auto">
+    <thead>
+        <th>Nombre</th>
+        <th>Fecha</th>
+        <th>Capitan</th>
+        <th>Curso</th>
+    </thead>
+    <tbody>
+        @foreach(Inscripciones res in @Model.inscripciones)
+        {
+            <tr>
+                <td>@res.NombreActividad</td>
+                <td>@res.FechaInscripcion</td>
+                <td>@res.QuiereSerCapitan</td>
+                <td>@Model.nombreCurso</td>
+            </tr>
+        }
+    </tbody>
+</table>

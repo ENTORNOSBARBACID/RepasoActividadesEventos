@@ -1,0 +1,23 @@
+﻿@model List<Usuarios>;
+
+<h1>Alumnos: </h1>
+
+<table class="table-active w-75 mx-auto">
+    <thead>
+        <th>Id Usuario</th>
+        <th>Nombre</th>
+        <th>Email</th>
+    </thead>
+    <tbody>
+        @foreach (var alumno in Model)
+        {
+            <tr>
+                <td>@alumno.IdUsuario</td>
+                <td>@alumno.Nombre</td>
+                <td>@alumno.Email</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@alumno.IdUsuario" class="btn btn-warning">Details</a>
+                </td>
+            </tr>
+        }
+</table>
